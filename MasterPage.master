@@ -1,0 +1,84 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+            background-color: #000000;
+        }
+        .style2
+        {
+            width: 271px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+            <ContentTemplate>
+                <asp:Button ID="b_register" runat="server" 
+                    style="top: 24px; left: 1206px; position: absolute; height: 26px; width: 56px" 
+                    Text="Sign Up" onclick="b_register_Click" CausesValidation="False" />
+                <asp:Button ID="b_login" runat="server" 
+                    style="top: 24px; left: 1138px; position: absolute; height: 26px; width: 56px" 
+                    Text="Log in" onclick="b_login_Click" />
+                <asp:Image ID="Image1" runat="server" Height="246px" ImageUrl="~/img/11.jpg" 
+                    Width="100%" />
+                <asp:ScriptManager ID="ScriptManager1" runat="server">
+                </asp:ScriptManager>
+                <asp:Timer ID="Timer1" runat="server" ontick="Timer1_Tick" Interval="1000">
+                </asp:Timer>
+                <asp:Button ID="b_admin" runat="server" 
+                    style="z-index: 1; left: 1207px; top: 229px; position: absolute" 
+                    Text="Admin" onclick="b_admin_Click" CausesValidation="False" />
+            </ContentTemplate>
+        </asp:UpdatePanel>
+        <table align="center" class="style1">
+            <tr>
+                <td align="center">
+                    <asp:LinkButton ID="LinkButton1" runat="server" Font-Bold="True" 
+                        ForeColor="White" PostBackUrl="~/home.aspx" CausesValidation="False">Home</asp:LinkButton>
+                </td>
+                <td align="center">
+                    <asp:LinkButton ID="LinkButton2" runat="server" Font-Bold="True" 
+                        ForeColor="White" PostBackUrl="~/laptop.aspx" onclick="LinkButton2_Click" 
+                        CausesValidation="False">Laptop</asp:LinkButton>
+                </td>
+                <td align="center">
+                    <asp:LinkButton ID="LinkButton3" runat="server" Font-Bold="True" 
+                        ForeColor="White" onclick="LinkButton3_Click" CausesValidation="False">Mobile</asp:LinkButton>
+                </td>
+                <td align="left" class="style2">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:LinkButton ID="LinkButton4" runat="server" Font-Bold="True" 
+                        ForeColor="White" PostBackUrl="~/music.aspx" CausesValidation="False">Headphones and Speaker</asp:LinkButton>
+                </td>
+                <td align="center">
+                    <asp:LinkButton ID="LinkButton5" runat="server" Font-Bold="True" 
+                        ForeColor="White" onclick="LinkButton5_Click" CausesValidation="False">Camera</asp:LinkButton>
+                </td>
+                <td align="center">
+                    <asp:LinkButton ID="LinkButton6" runat="server" Font-Bold="True" 
+                        ForeColor="White" onclick="LinkButton6_Click" CausesValidation="False">Television</asp:LinkButton>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+            <p>
+                &nbsp;</p>
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
